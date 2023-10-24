@@ -13,7 +13,13 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    max-width: 1200px;
+}
 .heading{
     font-family: Roboto;
     font-size: 100px;
@@ -42,6 +48,7 @@ body{
     grid-area: display;
     display: grid;
     border: #000 1px solid;
+    border-radius: 14px;
     justify-content: end;
     align-items: end;
 
@@ -103,6 +110,7 @@ button{
     width: 70px;
     height: 70px;
     border-radius: 50%;
+    border: none;
     margin-left: 5px;
     color: #fff;
     font-family: Roboto;
@@ -121,4 +129,24 @@ button{
     background-color: orange;
     font-size: 30px;
     margin: 0 5px 0 0;
+}
+@media (max-width: 600px ){
+    .container{
+        max-width: 500px;
+    }
+    .heading h1 {
+        font-size: 3rem;
+    }
+}
+@media (max-width: 400px){
+    .container {
+        max-width: 400px;
+    }
+    .heading h1 {
+        display: none;
+    }
+    .calc__body {
+        width: 100%;
+        margin-top: 0;
+    }
 }

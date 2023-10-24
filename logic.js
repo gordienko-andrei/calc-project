@@ -25,6 +25,16 @@ let equal = document.getElementById('equal');
 // Объявляем массив
 let summary = [];
 let lastElem = summary.slice(-1);
+
+// Обновление данных на "дисплее"
+function updateOutput(){
+  if (isFirstElementComma()) {
+    out.innerHTML = '';
+  } else {
+    out.innerHTML = summary.join('');
+  }
+};
+
 // Обработчики событий для кнопок удаления, процентов, и отриц.знач.
 ac.addEventListener('click', function(){
     summary.length = 0;
@@ -184,15 +194,6 @@ function isFirstElementComma(){
   const firstElement = summary[0];
   return firstElement === '.'
 };
-    
-// Обновление данных на "дисплее"
-function updateOutput(){
-  if (isFirstElementComma()) {
-    out.innerHTML = '';
-  } else {
-    out.innerHTML = summary.join('');
-  }
-};
 
 // Основная функция рассчета
 function calculate() {
@@ -238,7 +239,7 @@ function calculate() {
               break;
             default:
               console.log('Ошибка: Неверный оператор');
-              return;
+              
           }
         }
         // Ограничиваем результат до 12 символов
@@ -252,5 +253,5 @@ function calculate() {
       } else {
         out.innerHTML('Ошибка: Недостаточно данных для вычисления');
       }
-    }
+}
     
